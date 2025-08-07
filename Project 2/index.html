@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lakewood Vantage Coding Presentation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home-section" class="active">Home</a></li>
+          <li><a href="#gallery-section">Gallery</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home-section" class="section">
+      <h1 style="color: rgb(204, 46, 164)" ,>
+        Lakewood Vantage Grade 9 Coding Presentation
+      </h1>
+      <h4>
+        Lakewood Vantage is the best school in terms of academics and
+        performance. It also has disciplined learners, and they are all
+        friendly. The transport is also good, and we arrive home early. The
+        school compound gives a warm welcome to everyone, we call it home away
+        from home.
+      </h4>
+      <div class="image-container">
+        <div class="image-pad">
+          <img src="images/0103.jpeg" alt="Class Image" />
+        </div>
+        <div class="cal">
+          <p>
+            Grade Nine Lion is made up of ten learners. This year we will lead
+            in terms of academic performance. This class has the most
+            hardworking students. In times of trouble and need, we assist each
+            other like a family. The teachers here are the best, and they help
+            us unlock our potential.
+          </p>
+          <div class="content">
+            <button onclick="showMessage()">Click Me</button>
+            <p
+              id="message"
+              style="margin-top: 10px; font-size: 16px; font-weight: bold"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery-section" class="section">
+      <div class="grid-section">
+        <h2 class="grid-title">Our School Gallery</h2>
+        <div class="image-grid">
+          <div class="grid-item">
+            <img src="images/0100.jpeg" alt="School Building" />
+            <div class="hover-description">
+              Our beautiful school building with modern architecture and
+              spacious classrooms that provide an excellent learning
+              environment.
+            </div>
+          </div>
+          <div class="grid-item">
+            <img src="images/0101.jpeg" alt="Students in Class" />
+            <div class="hover-description">
+              Dedicated students working together in our well-equipped
+              classrooms, fostering a collaborative learning atmosphere.
+            </div>
+          </div>
+          <div class="grid-item">
+            <img src="images/0103.jpeg" alt="Grade 9 Lions" />
+            <div class="hover-description">
+              The Grade 9 Lion class - a group of ten hardworking learners who
+              support each other like family and excel academically.
+            </div>
+          </div>
+          <div class="grid-item">
+            <img src="images/0100.jpeg" alt="School Grounds" />
+            <div class="hover-description">
+              Our welcoming school compound that provides a warm "home away from
+              home" feeling for all students and visitors.
+            </div>
+          </div>
+          <div class="grid-item">
+            <img src="images/0101.jpeg" alt="Learning Environment" />
+            <div class="hover-description">
+              Our disciplined and friendly learners creating a positive academic
+              environment that promotes excellence and growth.
+            </div>
+          </div>
+          <div class="grid-item">
+            <img src="images/0103.jpeg" alt="Academic Excellence" />
+            <div class="hover-description">
+              Lakewood Vantage's commitment to academic performance and helping
+              students unlock their full potential.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function showMessage() {
+        let messageElement = document.getElementById("message");
+        messageElement.innerText =
+          "Good Morning Parents and Welcome to Lakewood Vantage Coding Presentation. It's great to have you here.    ";
+        setTimeout(() => {
+          messageElement.innerText = "";
+        }, 10000);
+      }
+
+      // Simple navigation functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        // Simple navigation with smooth scrolling
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            // Smooth scroll to section
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+            });
+
+            // Update active nav link
+            navLinks.forEach((link) => link.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
